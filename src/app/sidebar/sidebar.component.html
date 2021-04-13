@@ -1,0 +1,35 @@
+
+<mat-toolbar color="primary"  >
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon (click)="toggleSideBar()">menu</mat-icon>
+      </button>
+      <h1>Covid19</h1>
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button [routerLink]="'/'"> Charts </a>
+        <a mat-button [routerLink]="'/table'"> Table </a>
+      </div>
+    </mat-toolbar-row>
+  
+    <mat-toolbar-row>
+        <span style="font-size: 12px;">Charts and table for covid data</span>
+      </mat-toolbar-row>
+  </mat-toolbar>
+
+<mat-drawer-container>
+  <mat-sidenav #sidenav class="side-nav-left" position="start" role="directory" [opened]="opened">
+    <div class="backdrop" (click)="opened = false"></div>
+    <div class="side-nav-content">
+      <mat-nav-list class="side-nav-content">
+  
+        <a mat-list-item [routerLink]="'/'"> Chart</a>
+        <a mat-list-item [routerLink]="'/table'"> Table </a>
+        <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+  
+      </mat-nav-list>
+    </div>
+  </mat-sidenav>
+</mat-drawer-container>
+
+  
